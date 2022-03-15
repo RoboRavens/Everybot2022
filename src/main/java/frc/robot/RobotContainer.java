@@ -7,7 +7,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.ArmHoldCommand;
 import frc.robot.commands.ArmLowerFullyCommand;
 import frc.robot.commands.ArmRaiseFullyCommand;
@@ -19,8 +20,6 @@ import frc.robot.commands.autonomous.AutonomousScorePreloadedBallCommandGroup;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -55,8 +54,6 @@ public class RobotContainer {
     _drivetrain.setDefaultCommand(_drivetrainHumanControlCommand);
     _arm.setDefaultCommand(_armHoldCommand);
     _intake.setDefaultCommand(_intakeStopCommand);
-
-    SmartDashboard.putBoolean("Go For Auto", false);
   }
 
   /**
@@ -78,13 +75,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    Command autonomousCommand = null;
-
-    boolean goForAuto = SmartDashboard.getBoolean("Go For Auto", false);
-    
-    if (goForAuto == true) {
-      autonomousCommand = _autonomousScorePreloadedBallCommandGroup;
-    }
+    Command autonomousCommand =  _autonomousScorePreloadedBallCommandGroup;
     
     return autonomousCommand;
   }

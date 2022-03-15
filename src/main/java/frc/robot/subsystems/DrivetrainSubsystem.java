@@ -6,7 +6,6 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 
@@ -16,9 +15,9 @@ public class DrivetrainSubsystem extends SubsystemBase {
 // private final PWMSparkMax leftMotorFront = new PWMSparkMax(0)
 
 private final PWMSparkMax leftMotorFront = new PWMSparkMax(RobotMap.DRIVE_MOTOR_LEFT_FRONT);
-//private final PWMSparkMax leftMotorRear = new PWMSparkMax(RobotMap.DRIVE_MOTOR_LEFT_REAR);
+private final PWMSparkMax leftMotorRear = new PWMSparkMax(RobotMap.DRIVE_MOTOR_LEFT_REAR);
 private final PWMSparkMax rightMotorFront = new PWMSparkMax(RobotMap.DRIVE_MOTOR_RIGHT_FRONT);
-//private final PWMSparkMax rightMotorRear = new PWMSparkMax(RobotMap.DRIVE_MOTOR_RIGHT_REAR);
+private final PWMSparkMax rightMotorRear = new PWMSparkMax(RobotMap.DRIVE_MOTOR_RIGHT_REAR);
 
 
   /*
@@ -42,9 +41,9 @@ private final PWMSparkMax rightMotorFront = new PWMSparkMax(RobotMap.DRIVE_MOTOR
 
     
     leftMotorFront.set(driveLeftPower * -1);
-    //leftMotorRear.set(driveRightPower);
+    leftMotorRear.set(driveLeftPower * -1);
     rightMotorFront.set(driveRightPower);
-    //rightMotorRear.set(driveRightPower); 
+    rightMotorRear.set(driveRightPower); 
     
   }
 
