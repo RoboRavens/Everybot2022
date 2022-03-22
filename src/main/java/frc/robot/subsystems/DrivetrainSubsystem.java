@@ -30,6 +30,16 @@ private final PWMSparkMax rightMotorRear = new PWMSparkMax(RobotMap.DRIVE_MOTOR_
   /** Creates a new ExampleSubsystem. */
   public DrivetrainSubsystem() {}
 
+  // NOT IMPLEMENTED - WILL DEPEND ON A TEAM'S INDIVIDUAL GYRO SETUP
+  public double getOrientation() {
+    return 0;
+  }
+
+  // NOT IMPLEMENTED - WILL DEPEND ON A TEAM'S INDIVIDUAL ENCODER SETUP
+  public double getEncoderInches() {
+    return 0;
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
